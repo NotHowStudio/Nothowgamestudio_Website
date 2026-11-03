@@ -1,14 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import games from '../data/games.json';
+import allGames from '../data/games.json';
+
+const games = allGames.filter(g => !g.hidden);
 
 const videoGameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Dissonant",
-  "description": "A patience test disguised as a game. Control Vil through a mesmerizing realm governed by the all-seeing Observer. Simple mechanics you can play with 1 or 2 buttons.",
-  "genre": ["Puzzle", "Arcade", "Difficult", "Physics", "Souls-like"],
+  "description": "A patience test disguised as a game. Control Vil through a mesmerizing realm governed by the all-seeing Observer.",
+  "genre": ["Difficult", "Physics", "Abstract", "Psychedelic", "Surreal"],
   "gamePlatform": ["PC", "Steam"],
   "url": "https://store.steampowered.com/app/3006030/Dissonant/",
   "image": "https://nothowgamestudio.com/images/games/dissonant-capsule.png",
@@ -20,7 +22,7 @@ const videoGameSchema = {
 };
 ---
 
-<BaseLayout title="Games · !How Game Studio" description="Explore games by !How Game Studio. Dissonant, Krodha, and more." jsonLd={videoGameSchema}>
+<BaseLayout title="Games · !How Game Studio" description="Games by !How Game Studio: Krodha, a dice and deck roguelike from the legend of Vikram and Betaal, and Dissonant, a patience test disguised as a game." jsonLd={videoGameSchema}>
   <!-- HERO -->
   <section class="bg-crimson pt-32 pb-20 px-6 text-center relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none">
@@ -88,7 +90,10 @@ const videoGameSchema = {
 
             <div class="flex flex-wrap gap-4 fade-in">
               {game.storeLinks.steam && (
-                <a href={game.storeLinks.steam} target="_blank" rel="noopener noreferrer" class="magnetic-btn bg-crimson text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-crimson-dark transition-colors">WISHLIST ON STEAM</a>
+                <a href={game.storeLinks.steam} target="_blank" rel="noopener noreferrer" class="magnetic-btn bg-crimson text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-crimson-dark transition-colors">WISHLIST {game.title.toUpperCase()}</a>
+              )}
+              {game.storeLinks.demo && (
+                <a href={game.storeLinks.demo} target="_blank" rel="noopener noreferrer" class="magnetic-btn border border-mint text-mint font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-mint hover:text-charcoal transition-colors">PLAY THE FREE DEMO</a>
               )}
               {game.storeLinks.itch && (
                 <a href={game.storeLinks.itch} target="_blank" rel="noopener noreferrer" class="magnetic-btn border border-mint text-mint font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-mint hover:text-charcoal transition-colors">PLAY ON ITCH.IO</a>

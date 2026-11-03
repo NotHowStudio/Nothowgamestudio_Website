@@ -50,6 +50,7 @@ const socialPlatforms = [
             <option value="general">General</option>
             <option value="press">Press</option>
             <option value="business">Business</option>
+            <option value="training">Training modules</option>
             <option value="fanmail">Fan Mail</option>
           </select>
         </div>
@@ -96,7 +97,15 @@ const socialPlatforms = [
   <!-- PRESS -->
   <section class="bg-charcoal py-12 px-6 border-t border-fade">
     <div class="max-w-2xl mx-auto text-center fade-in">
-      <p class="text-smoke text-base">Need press materials? <a href="/press" class="text-mint font-medium hover:underline">Visit our Press Kit</a> or email us at <span class="text-mint font-medium">press@howgamestudio.com</span></p>
+      <p class="text-smoke text-base">Need press materials? <a href="/press" class="text-mint font-medium hover:underline">Visit our Press Kit</a> or email us at <span class="text-mint font-medium">info@nothowgamestudio.com</span></p>
     </div>
   </section>
+  <script>
+    // Preselect the subject from links like /contact?subject=training
+    const wanted = new URLSearchParams(window.location.search).get('subject');
+    const select = document.getElementById('subject') as HTMLSelectElement | null;
+    if (wanted && select && [...select.options].some(o => o.value === wanted)) {
+      select.value = wanted;
+    }
+  </script>
 </BaseLayout>

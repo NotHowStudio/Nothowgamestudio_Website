@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Game development',
+    body: 'Full-cycle indie game development, from prototype to a build you can ship.',
+    proof: 'Our own games: Dissonant and Krodha.',
+  },
+  {
+    title: 'Co-development & porting',
+    body: 'Steam builds in Godot, Unity or Unreal, to PC and new storefronts, by a native-Linux team.',
+    proof: '',
+  },
+  {
+    title: 'Interactive design & UX',
+    body: 'Game feel, UX and systems design, including VR and XR.',
+    proof: '',
+  },
+];
+
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'NOTHOW Game Studio',
+  legalName: 'NOTHOW Game Studio Private Limited',
+  url: 'https://nothowgamestudio.com/services',
+  email: 'info@nothowgamestudio.com',
+  address: { '@type': 'PostalAddress', addressLocality: 'Bangalore', addressCountry: 'IN' },
+  knowsAbout: ['Game development', 'Gamified training for manufacturing', 'Co-development and porting', 'Interactive design', 'Godot', 'Unity', 'Unreal Engine'],
+};
+---
+
+<BaseLayout
+  title="Services · !How Game Studio"
+  description="Work with NOTHOW Game Studio: game-like training modules for manufacturing, game development, co-development and porting, and interactive design."
+  jsonLd={servicesSchema}
+>
+  <!-- HERO -->
+  <section class="bg-crimson pt-32 pb-20 px-6 text-center relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 right-20 w-64 h-64 border border-white/5 rounded-full"></div>
+      <div class="absolute bottom-10 left-10 w-40 h-40 border border-white/5 rotate-45"></div>
+    </div>
+    <h1 class="split-text font-display text-white text-[64px] md:text-[80px] leading-none relative z-10">WORK WITH US</h1>
+    <p class="font-body text-snow/85 text-lg mt-4 relative z-10 max-w-2xl mx-auto fade-in">We build our own games and take on select client work, with the same deliberate craft.</p>
+  </section>
+
+  <!-- FEATURED: TRAINING -->
+  <section class="bg-charcoal py-24 px-6 spotlight-section">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-mint uppercase tracking-[0.2em] font-body font-medium text-[13px] mb-3 fade-in">Training for manufacturing · New demo</p>
+        <h2 class="split-text font-display text-snow text-[36px] sm:text-[48px] md:text-[60px] leading-none mb-5">PRACTISE THE JOB BEFORE THE LINE</h2>
+        <p class="text-smoke text-base md:text-lg leading-relaxed mb-5 fade-in">
+          Training of any kind for manufacturing, mostly how the work gets done: machine setup, assembly, quality checks, changeovers, standard work and new-joiner onboarding. Safety is one category among them.
+        </p>
+        <p class="text-smoke text-base leading-relaxed mb-8 fade-in">
+          We turn a station's SOP into short, game-like levels a new operator plays on a tablet before touching the line, in their language, with a training record for every attempt.
+        </p>
+        <div class="flex flex-wrap gap-4 fade-in">
+          <a href="/training" class="magnetic-btn bg-crimson text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-crimson-dark transition-colors">See First Shift</a>
+          <a href="/training/sop-sample/" class="magnetic-btn border border-mint text-mint font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-mint hover:text-charcoal transition-colors">Play the demo</a>
+        </div>
+      </div>
+      <a href="/training" class="scale-in block rounded-xl border border-fade overflow-hidden group">
+        <img src="/images/training/first-shift-poster.jpg" alt="First Shift demo: the soldering module's level map on a tablet" width="1280" height="720" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+      </a>
+    </div>
+  </section>
+
+  <hr class="animated-hr" />
+
+  <!-- OTHER SERVICES -->
+  <section class="bg-charcoal py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="split-text font-display text-snow text-[44px] md:text-[52px] text-center mb-14">ALSO ON THE MENU</h2>
+      <div class="grid md:grid-cols-3 gap-5 stagger-children">
+        {services.map(s => (
+          <div class="bg-surface rounded-xl p-8 border border-fade hover:border-mint hover:-translate-y-1 transition-all duration-300">
+            <h3 class="font-body font-semibold text-snow text-xl mb-3">{s.title}</h3>
+            <p class="text-smoke text-[15px] leading-relaxed">{s.body}</p>
+            {s.proof && <p class="text-mint text-sm mt-4 font-body">{s.proof}</p>}
+          </div>
+        ))}
+      </div>
+      <p class="text-smoke text-center text-base mt-12 fade-in">A small Bangalore studio making games since 2018. Godot, Unity and Unreal.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-charcoal pb-24 px-6">
+    <div class="max-w-4xl mx-auto tilt-card">
+      <div class="bg-crimson rounded-2xl p-10 md:p-12 text-center relative overflow-hidden">
+        <h2 class="font-display text-white text-[40px] md:text-[52px] leading-tight mb-3">Got a world that needs building?</h2>
+        <p class="font-body text-white/80 text-lg mb-8">Tell us what you're making.</p>
+        <a href="/contact?subject=business" class="magnetic-btn inline-flex items-center gap-2 bg-charcoal text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-4 hover:bg-night transition-colors">
+          Get in touch &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

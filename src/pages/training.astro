@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const demoUrl = '/training/sop-sample/';
+
+const steps = [
+  {
+    title: 'Learn by doing',
+    body: 'Trainees tap through the real steps of the job: pick the right part, put it in the right place, do it in the right order. Most questions are pictures, not paragraphs.',
+  },
+  {
+    title: 'Mistakes cost nothing here',
+    body: 'Get a step wrong and the module shows why it is wrong, then lets them try again. Tighten a flange in the wrong order and it leaks on the pressure test. Use the star pattern and it seals.',
+  },
+  {
+    title: 'Judge real defects',
+    body: 'Inspection levels ask trainees to spot bad joints, missing parts and squeezed gaskets, and to make the call a supervisor would: accept, rework or escalate.',
+  },
+  {
+    title: 'Short levels, clear finish',
+    body: 'Warm-up, learn, practise, shift check, final check. Stars and a Line-ready badge at the end, and a My progress screen that shows what to work on.',
+  },
+];
+
+const plant = [
+  { title: 'A record for every attempt', body: 'Scores, times and the before-and-after check are stored on the device, and can be exported as a CSV for your training file.' },
+  { title: 'Your procedure, your brand', body: 'Your logo and name, your pass mark and target time, your steps and photos. Add 3D steps where seeing the part from every side matters.' },
+  { title: 'Your language', body: 'The whole interface switches between English, Kannada, Hindi, Tamil, Telugu and Malayalam.' },
+  { title: 'Runs on what you have', body: 'PC, tablet or phone, in the browser. No headset, no install needed for the web version.' },
+];
+
+const modules = [
+  { name: 'Hand-solder a through-hole part', kind: 'Electronics assembly · full module' },
+  { name: 'Tighten a bolted flange (with a 3D level)', kind: 'Assembly · taster' },
+  { name: '5S at your workstation', kind: 'Standard work · taster' },
+  { name: 'Lock out a machine', kind: 'Safety · taster' },
+];
+
+const courseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Game-like training modules for manufacturing',
+  serviceType: 'Interactive training content',
+  provider: {
+    '@type': 'Organization',
+    name: 'NOTHOW Game Studio',
+    legalName: 'NOTHOW Game Studio Private Limited',
+    url: 'https://nothowgamestudio.com',
+    email: 'info@nothowgamestudio.com',
+  },
+  areaServed: 'IN',
+  description: 'Short, game-like practice modules that turn a station SOP into levels a new operator plays on a tablet before touching the line.',
+  url: 'https://nothowgamestudio.com/training',
+};
+---
+
+<BaseLayout
+  title="First Shift: Training Demo · !How Game Studio"
+  description="First Shift turns a station's SOP into short, game-like levels a new operator practises on a tablet before touching the line. Play the demo in your browser."
+  ogImage="/images/training/first-shift-poster.jpg"
+  jsonLd={courseSchema}
+>
+  <!-- HERO -->
+  <section class="bg-crimson pt-32 pb-20 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-20 right-20 w-64 h-64 border border-white/5 rounded-full"></div>
+      <div class="absolute bottom-10 left-10 w-40 h-40 border border-white/5 rotate-45"></div>
+    </div>
+    <div class="max-w-5xl mx-auto relative z-10">
+      <p class="text-white/80 uppercase tracking-[0.2em] font-body font-medium text-[13px] mb-4 fade-in">Training for manufacturing · New demo</p>
+      <h1 class="split-text font-display text-white text-[64px] md:text-[96px] leading-none">FIRST SHIFT</h1>
+      <p class="font-body text-white text-xl md:text-2xl mt-6 max-w-3xl fade-in">Practise the job before you touch the line.</p>
+      <p class="font-body text-snow/85 text-base md:text-lg mt-4 max-w-3xl leading-relaxed fade-in">
+        We turn a station's SOP into short, game-like levels that a new operator plays on a tablet. They tap through the real steps, see why a mistake is a mistake, and finish Line-ready. The plant gets a training record for every attempt.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 mt-10 fade-in">
+        <a href={demoUrl} class="magnetic-btn inline-flex items-center justify-center gap-2 bg-charcoal text-white font-body font-semibold text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-4 hover:bg-night transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          Play the demo
+        </a>
+        <a href="#reel" class="magnetic-btn inline-flex items-center justify-center border border-white text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-4 hover:bg-white hover:text-crimson transition-colors">Watch the reel</a>
+      </div>
+      <p class="font-body text-white/70 text-sm mt-4 fade-in">Runs in the browser on a PC, tablet or phone. The first load can be up to 45 MB, so Wi-Fi helps.</p>
+    </div>
+  </section>
+
+  <!-- REEL -->
+  <section id="reel" class="bg-charcoal py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="rounded-xl border border-fade overflow-hidden scale-in">
+        <video
+          class="w-full aspect-video bg-night"
+          controls
+          playsinline
+          preload="none"
+          poster="/images/training/first-shift-poster.jpg"
+        >
+          <source src="/training/first-shift-reel.mp4" type="video/mp4" />
+          Your browser can't play this video. <a href="/training/first-shift-reel.mp4">Download the reel</a>.
+        </video>
+      </div>
+      <p class="text-smoke text-sm mt-4 font-body fade-in">Every shot is the real demo, recorded straight from the build. Captions carry the story, so it works with the sound off.</p>
+    </div>
+  </section>
+
+  <!-- TRAINEE VIEW -->
+  <section class="bg-charcoal pb-24 px-6 spotlight-section">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-mint uppercase tracking-[0.2em] font-body font-medium text-[13px] mb-3 fade-in">Trainee view</p>
+      <h2 class="split-text font-display text-snow text-[34px] sm:text-[44px] md:text-[56px] leading-none mb-12">WHAT THE NEW OPERATOR DOES</h2>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="grid sm:grid-cols-2 gap-5 stagger-children">
+          {steps.map(s => (
+            <div class="bg-surface rounded-xl p-6 border border-fade hover:border-mint transition-colors duration-300">
+              <h3 class="font-body font-semibold text-snow text-lg mb-2">{s.title}</h3>
+              <p class="text-smoke text-[15px] leading-relaxed">{s.body}</p>
+            </div>
+          ))}
+        </div>
+        <div class="scale-in">
+          <div class="rounded-xl border border-fade overflow-hidden">
+            <img src="/images/training/first-shift-3d.jpg" alt="First Shift 3D level: tightening the eight nuts of a flange in star order" width="1920" height="1080" class="w-full aspect-video object-cover" loading="lazy" />
+          </div>
+          <p class="text-smoke text-sm mt-3 font-body">The 3D flange level. Wrong order, it leaks. Star order, it seals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="animated-hr" />
+
+  <!-- FOR THE PLANT -->
+  <section class="bg-charcoal py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-mint uppercase tracking-[0.2em] font-body font-medium text-[13px] mb-3 fade-in">For the plant</p>
+      <h2 class="split-text font-display text-snow text-[44px] md:text-[56px] leading-none mb-12">MAKE IT YOURS</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">
+        {plant.map(p => (
+          <div class="bg-gradient-to-br from-surface to-night rounded-xl p-6 border border-fade hover:border-mint transition-colors duration-300">
+            <h3 class="font-body font-semibold text-snow text-lg mb-2">{p.title}</h3>
+            <p class="text-smoke text-[15px] leading-relaxed">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE BUILD IT -->
+  <section class="bg-crimson py-24 px-6 relative overflow-hidden">
+    <div class="absolute top-10 left-10 w-32 h-32 border border-white/10 rounded-full"></div>
+    <div class="max-w-4xl mx-auto relative z-10">
+      <h2 class="font-display text-white text-[44px] md:text-[56px] leading-none mb-6 fade-in">HOW WE BUILD IT</h2>
+      <p class="font-body text-white text-lg md:text-xl leading-relaxed fade-in">
+        We start on your shop floor. We sit in on your current training and watch the station at work, so every step, part and mistake in the module is the real one. Then your SOP and photos become the levels, and your approver signs it off before anyone trains on it.
+      </p>
+    </div>
+  </section>
+
+  <!-- IN THE DEMO -->
+  <section class="bg-charcoal py-24 px-6 spotlight-section">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-mint uppercase tracking-[0.2em] font-body font-medium text-[13px] mb-3 fade-in">In the demo</p>
+      <h2 class="split-text font-display text-snow text-[34px] sm:text-[44px] md:text-[56px] leading-none mb-10">ONE ENGINE, FOUR PROCEDURES</h2>
+      <ul class="grid sm:grid-cols-2 gap-4 stagger-children">
+        {modules.map(m => (
+          <li class="bg-surface rounded-xl px-6 py-5 border border-fade">
+            <p class="font-body font-semibold text-snow">{m.name}</p>
+            <p class="text-smoke text-sm mt-1">{m.kind}</p>
+          </li>
+        ))}
+      </ul>
+      <p class="text-smoke text-base leading-relaxed mt-8 max-w-3xl fade-in">
+        The modules are different jobs on the same engine. A new procedure is mostly new content: the steps, the photos, the script. That keeps turnaround short.
+      </p>
+      <div class="bg-night/60 rounded-lg border border-fade/60 p-5 mt-8 fade-in">
+        <p class="text-smoke text-sm leading-relaxed">
+          <span class="text-snow font-medium">About this sample.</span> The procedures in the demo are built from openly licensed public material. They are a sample, not training for any specific site. Translations in the demo are drafts; every language is reviewed by a native speaker before a module is delivered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-charcoal pb-24 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-5 stagger-children">
+      <div class="md:col-span-3 tilt-card">
+        <div class="bg-crimson rounded-2xl p-10 md:p-12 min-h-[260px] relative overflow-hidden">
+          <div class="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-crimson-dark/30 blur-3xl pointer-events-none"></div>
+          <div class="relative z-10">
+            <h2 class="font-display text-white text-[40px] md:text-[52px] leading-tight mb-3">Send us one procedure.</h2>
+            <p class="font-body text-white/80 text-lg mb-8">We'll turn it into a practice module.</p>
+            <a href="/contact?subject=training" class="magnetic-btn inline-flex items-center gap-2 bg-charcoal text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-4 hover:bg-night transition-colors group/btn">
+              Get in touch <span class="inline-block group-hover/btn:translate-x-1 transition-transform">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-2 tilt-card">
+        <div class="bg-gradient-to-br from-surface to-night rounded-2xl p-10 md:p-12 border border-fade min-h-[260px] flex flex-col justify-between">
+          <div>
+            <h3 class="font-body font-semibold text-snow text-xl mb-2">Try it first</h3>
+            <p class="text-smoke text-sm font-body mb-6">Open the demo on the tablet your trainees would use. It takes a few minutes to play a level.</p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a href={demoUrl} class="magnetic-btn inline-flex items-center justify-center gap-2 border border-mint text-mint font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-6 py-3 hover:bg-mint hover:text-charcoal transition-colors">Play the demo</a>
+            <p class="text-smoke text-sm font-body">Or email <span class="text-mint font-medium">info@nothowgamestudio.com</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
