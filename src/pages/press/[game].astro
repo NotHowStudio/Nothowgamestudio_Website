@@ -85,21 +85,23 @@ const fmtDim = (dim: string) => (/^\d/.test(dim) ? `${dim}px` : dim);
         </>
       )}
 
-      <h3 class="font-display text-snow text-[28px] mb-6 fade-in">STORE ASSETS &amp; CAPSULES</h3>
+      <h3 class="font-display text-snow text-[28px] mb-6 fade-in">STORE ASSETS</h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
         {game.steamAssets.map((asset) => (
           <a href={asset.src} target="_blank" class="group">
             <div class="bg-surface rounded-xl border border-fade overflow-hidden hover:border-mint transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,212,185,0.15)]">
               <div class="aspect-video bg-night flex items-center justify-center p-3">
-                <img src={asset.src} alt={asset.label} class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <img src={asset.src} alt={asset.label || `${game.title} store asset`} class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" loading="lazy" />
               </div>
-              <div class="p-3 flex items-center justify-between">
-                <div>
-                  <p class="text-snow font-body text-sm font-medium">{asset.label}</p>
-                  <p class="text-snow text-xs font-body">{fmtDim(asset.dim)}</p>
+              {asset.label && (
+                <div class="p-3 flex items-center justify-between">
+                  <div>
+                    <p class="text-snow font-body text-sm font-medium">{asset.label}</p>
+                    <p class="text-snow text-xs font-body">{fmtDim(asset.dim)}</p>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-fade group-hover:text-mint transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-fade group-hover:text-mint transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </div>
+              )}
             </div>
           </a>
         ))}

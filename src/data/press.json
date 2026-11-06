@@ -21,22 +21,12 @@
       { "src": "/images/press/dissonant/dissonant-05.png", "label": "Screenshot 05" },
       { "src": "/images/press/dissonant/dissonant-06.png", "label": "Screenshot 06" }
     ],
-    "characters": [
-      { "src": "/images/press/dissonant/vil-blue-mode.png", "label": "Vil - Blue Mode" },
-      { "src": "/images/press/dissonant/vil-red-mode.png", "label": "Vil - Red Mode" }
-    ],
+    "characters": [],
     "steamAssets": [
-      { "src": "/images/press/dissonant/DissonantLogo_800x300.png", "label": "Game Logo", "dim": "800x300" },
-      { "src": "/images/press/dissonant/dissonant-icon.png", "label": "Icon", "dim": "Square" },
-      { "src": "/images/press/dissonant/main-capsule-1232x706.png", "label": "Main Capsule", "dim": "1232x706" },
-      { "src": "/images/press/dissonant/header-capsule-920x430.png", "label": "Header Capsule", "dim": "920x430" },
-      { "src": "/images/press/dissonant/library-capsule-600x900.png", "label": "Library Capsule", "dim": "600x900" },
-      { "src": "/images/press/dissonant/library-header-920x430.png", "label": "Library Header", "dim": "920x430" },
-      { "src": "/images/press/dissonant/library-hero-3840x1240.png", "label": "Library Hero", "dim": "3840x1240" },
-      { "src": "/images/press/dissonant/library-logo.png", "label": "Library Logo", "dim": "Transparent" },
-      { "src": "/images/press/dissonant/vertical-capsule-748x896.png", "label": "Vertical Capsule", "dim": "748x896" },
-      { "src": "/images/press/dissonant/small-capsule-462x174.png", "label": "Small Capsule", "dim": "462x174" },
-      { "src": "/images/press/dissonant/page-background-1438x810.png", "label": "Page Background", "dim": "1438x810" }
+      { "src": "/images/games/DissonantMainCapsule_1232x706.png", "label": "", "dim": "" },
+      { "src": "/images/games/DissonantVerticalCapsule_748x896.png", "label": "", "dim": "" },
+      { "src": "/images/games/LibraryHero_3840x1240.png", "label": "", "dim": "" },
+      { "src": "/images/games/dissonant-header.png", "label": "", "dim": "" }
     ]
   },
   {
@@ -61,17 +51,11 @@
     ],
     "characters": [],
     "steamAssets": [
-      { "src": "/images/press/krodha/krodha-logo-800x300.png", "label": "Game Logo", "dim": "800x300" },
-      { "src": "/images/press/krodha/krodha-icon.png", "label": "Icon", "dim": "Square" },
-      { "src": "/images/press/krodha/main-capsule-1232x706.png", "label": "Main Capsule", "dim": "1232x706" },
-      { "src": "/images/press/krodha/header-capsule-920x430.png", "label": "Header Capsule", "dim": "920x430" },
-      { "src": "/images/press/krodha/library-capsule-600x900.png", "label": "Library Capsule", "dim": "600x900" },
-      { "src": "/images/press/krodha/library-header-920x430.png", "label": "Library Header", "dim": "920x430" },
-      { "src": "/images/press/krodha/library-hero-3840x1240.png", "label": "Library Hero", "dim": "3840x1240" },
-      { "src": "/images/press/krodha/library-logo.png", "label": "Library Logo", "dim": "Transparent" },
-      { "src": "/images/press/krodha/vertical-capsule-748x896.png", "label": "Vertical Capsule", "dim": "748x896" },
-      { "src": "/images/press/krodha/small-capsule-462x174.png", "label": "Small Capsule", "dim": "462x174" },
-      { "src": "/images/press/krodha/page-background-1438x810.png", "label": "Page Background", "dim": "1438x810" }
+      { "src": "/images/games/KrodhaIcon_withBG_1024x1024.png", "label": "", "dim": "" },
+      { "src": "/images/games/LibraryHero.png", "label": "", "dim": "" },
+      { "src": "/images/games/MainCapsule_1232x706.png", "label": "", "dim": "" },
+      { "src": "/images/games/VerticalCapsule_748x896.png", "label": "", "dim": "" },
+      { "src": "/images/games/HeaderCapsule.png", "label": "", "dim": "" }
     ]
   }
 ]
