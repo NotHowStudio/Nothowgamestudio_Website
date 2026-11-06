@@ -22,8 +22,28 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+.idea
 
 # local tooling (bun sandbox workaround + qmd search index)
 .bun-tmp/
 .bun-cache/
 .qmd/
+
+# Claude Code local config/session state
+.claude/
+
+# local MCP config
+.mcp.json
+
+# shell / environment files leaked from home-dir mount (not project files)
+.bash_profile
+.bashrc
+.profile
+.zprofile
+.zshrc
+.gitconfig
+.gitmodules
+.ripgreprc
+
+# bun lockfile (project standardizes on package-lock.json)
+bun.lock
