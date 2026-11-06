@@ -25,31 +25,53 @@ const socialPlatforms = [
   <!-- FORM -->
   <section class="bg-charcoal py-24 px-6 spotlight-section">
     <div class="max-w-2xl mx-auto fade-in">
-      <form name="contact" method="POST" data-netlify="true" class="space-y-6">
+      <form name="contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
         <input type="hidden" name="form-name" value="contact" />
+        <!-- Sets the notification email's subject line. The script below adds the chosen topic. -->
+        <input type="hidden" id="email-subject" name="subject" value="Website enquiry" data-remove-prefix />
+        <!-- Honeypot: hidden from people, and Netlify rejects any submission that fills it. -->
+        <p class="hidden">
+          <label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
 
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
             <label for="name" class="block text-snow font-body font-medium text-sm mb-2 uppercase tracking-wider">Name</label>
-            <input type="text" id="name" name="name" required
+            <input type="text" id="name" name="name" required autocomplete="name"
               class="w-full bg-surface border border-fade rounded-lg px-4 py-3 text-snow font-body focus:outline-none focus:border-mint focus:shadow-[0_0_15px_rgba(157,212,185,0.1)] transition-all duration-300 placeholder:text-fade"
               placeholder="Your name" />
           </div>
           <div>
             <label for="email" class="block text-snow font-body font-medium text-sm mb-2 uppercase tracking-wider">Email</label>
-            <input type="email" id="email" name="email" required
+            <input type="email" id="email" name="email" required autocomplete="email"
               class="w-full bg-surface border border-fade rounded-lg px-4 py-3 text-snow font-body focus:outline-none focus:border-mint focus:shadow-[0_0_15px_rgba(157,212,185,0.1)] transition-all duration-300 placeholder:text-fade"
               placeholder="your@email.com" />
           </div>
         </div>
 
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="phone" class="block text-snow font-body font-medium text-sm mb-2 uppercase tracking-wider">Phone / WhatsApp <span class="text-smoke normal-case tracking-normal font-normal">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel"
+              class="w-full bg-surface border border-fade rounded-lg px-4 py-3 text-snow font-body focus:outline-none focus:border-mint focus:shadow-[0_0_15px_rgba(157,212,185,0.1)] transition-all duration-300 placeholder:text-fade"
+              placeholder="+91 ..." />
+          </div>
+          <div>
+            <label for="company" class="block text-snow font-body font-medium text-sm mb-2 uppercase tracking-wider">Company <span class="text-smoke normal-case tracking-normal font-normal">(optional)</span></label>
+            <input type="text" id="company" name="company" autocomplete="organization"
+              class="w-full bg-surface border border-fade rounded-lg px-4 py-3 text-snow font-body focus:outline-none focus:border-mint focus:shadow-[0_0_15px_rgba(157,212,185,0.1)] transition-all duration-300 placeholder:text-fade"
+              placeholder="Where you work" />
+          </div>
+        </div>
+
         <div>
-          <label for="subject" class="block text-snow font-body font-medium text-sm mb-2 uppercase tracking-wider">Subject</label>
-          <select id="subject" name="subject"
+          <label for="topic" class="block text-snow font-body font-medium text-sm mb-2 uppercase tracking-wider">Subject</label>
+          <select id="topic" name="topic"
             class="w-full bg-surface border border-fade rounded-lg px-4 py-3 text-snow font-body focus:outline-none focus:border-mint focus:shadow-[0_0_15px_rgba(157,212,185,0.1)] transition-all duration-300">
             <option value="general">General</option>
             <option value="press">Press</option>
             <option value="business">Business</option>
+            <option value="training">Training modules</option>
             <option value="fanmail">Fan Mail</option>
           </select>
         </div>
@@ -65,6 +87,7 @@ const socialPlatforms = [
           class="magnetic-btn w-full bg-crimson text-white font-body font-semibold text-sm uppercase tracking-[0.15em] rounded-lg px-8 py-4 hover:bg-crimson-dark transition-colors group">
           SEND MESSAGE <span class="inline-block group-hover:translate-x-1 transition-transform">&rarr;</span>
         </button>
+        <p class="text-smoke text-sm font-body text-center">We only use these details to reply to you.</p>
       </form>
     </div>
   </section>
@@ -85,7 +108,7 @@ const socialPlatforms = [
                 <Fragment set:html={platform.icon} />
               </span>
               <span class="text-snow font-body text-sm font-medium">{platform.label}</span>
-              <span class="text-fade text-xs font-body">{platform.desc}</span>
+              <span class="text-smoke group-hover:text-mint text-xs font-body transition-colors">{platform.desc}</span>
             </a>
           ) : null;
         })}
@@ -96,7 +119,24 @@ const socialPlatforms = [
   <!-- PRESS -->
   <section class="bg-charcoal py-12 px-6 border-t border-fade">
     <div class="max-w-2xl mx-auto text-center fade-in">
-      <p class="text-smoke text-base">Need press materials? <a href="/press" class="text-mint font-medium hover:underline">Visit our Press Kit</a> or email us at <span class="text-mint font-medium">press@howgamestudio.com</span></p>
+      <p class="text-smoke text-base">Need press materials? <a href="/press" class="text-mint font-medium hover:underline">Visit our Press Kit</a> or email us at <span class="text-mint font-medium">info@nothowgamestudio.com</span></p>
     </div>
   </section>
+  <script>
+    // Preselect the subject from links like /contact?subject=training
+    const wanted = new URLSearchParams(window.location.search).get('subject');
+    const select = document.getElementById('topic') as HTMLSelectElement | null;
+    const emailSubject = document.getElementById('email-subject') as HTMLInputElement | null;
+    if (wanted && select && [...select.options].some(o => o.value === wanted)) {
+      select.value = wanted;
+    }
+    // Put the topic in the notification email's subject line, so enquiries are easy to sort.
+    const syncSubject = () => {
+      if (select && emailSubject) {
+        emailSubject.value = `Website enquiry: ${select.options[select.selectedIndex].text}`;
+      }
+    };
+    select?.addEventListener('change', syncSubject);
+    syncSubject();
+  </script>
 </BaseLayout>

@@ -3,37 +3,113 @@
     "title": "Dissonant",
     "slug": "dissonant",
     "tagline": "A patience test disguised as a game.",
-    "description": "It doesn't adapt to you. It doesn't compromise. Win, and the reward isn't loot or stats - it's resilience. Control Vil through a mesmerizing realm governed by the all-seeing Observer. Simple mechanics you can play with 1 or 2 buttons. The challenge isn't complexity - it's keeping your head when the game refuses to meet you halfway.",
-    "genre": ["Puzzle", "Arcade", "Difficult", "Physics", "Souls-like"],
-    "platforms": ["steam", "itch"],
-    "status": "Coming Soon on Steam",
-    "features": ["One-Button Controls", "Deliberate Difficulty", "Physics-Based", "No Hand-Holding"],
+    "description": "It doesn't adapt to you. It doesn't compromise. Win, and the reward isn't loot or stats - it's resilience. Control Vil through a mesmerizing realm governed by the all-seeing Observer. The controls are simple. The challenge isn't complexity - it's keeping your head when the game refuses to meet you halfway.",
+    "genre": [
+      "Difficult",
+      "Physics",
+      "Abstract",
+      "Psychedelic",
+      "Surreal"
+    ],
+    "platforms": [
+      "steam",
+      "itch"
+    ],
+    "status": "Free Demo on Steam",
+    "features": [
+      "Simple Controls",
+      "Deliberate Difficulty",
+      "Physics-Based",
+      "No Hand-Holding"
+    ],
     "storeLinks": {
       "steam": "https://store.steampowered.com/app/3006030/Dissonant/",
+      "demo": "https://store.steampowered.com/app/4285210/",
       "itch": "https://howstudio.itch.io/dissonant"
     },
     "pullQuote": "No builds. No stats. No safety net. Just you, the controls, and the consequences.",
     "playerQuote": "I hate this game but I also love it. So many deaths but you want to keep going. - Sudden Lee",
     "madeWith": "Unity + Blender",
-    "cardImage": "/images/games/dissonant-header.png",
-    "screenshots": ["/images/games/dissonant-01.png", "/images/games/dissonant-02.png", "/images/games/dissonant-03.png", "/images/games/dissonant-04.png", "/images/games/dissonant-05.png", "/images/games/dissonant-06.png"],
+    "cardImage": "/images/games/DissonantMainCapsule_1232x706.png",
+    "screenshots": [
+      "/images/games/dissonant-01.png",
+      "/images/games/dissonant-02.png",
+      "/images/games/dissonant-03.png",
+      "/images/games/dissonant-04.png",
+      "/images/games/dissonant-05.png",
+      "/images/games/dissonant-06.png"
+    ],
     "logo": "/images/games/dissonant-logo.png"
   },
   {
     "title": "Krodha",
     "slug": "krodha",
     "tagline": "Anger forged into something worth fighting for.",
-    "description": "13 months in the making. From early prototype to a game built through iteration, refinement, and discarding ideas that didn't earn their place. Featuring an original soundtrack composed specifically for the game. Preparing for Early Access on Steam.",
-    "genre": ["Action", "Indie"],
-    "platforms": ["steam"],
-    "status": "In Development - Early Access Coming Soon",
-    "features": ["Original Soundtrack", "13+ Months in Development"],
-    "storeLinks": {},
+    "description": "A dice, deck and slot-building roguelike rooted in the Indian legend of Vikram and Betaal. Draft your deck, seat your cards on the board and roll. The number die picks the slot, the element die picks the element, and every matching card fires in a cascade at the end of the turn. Coming to Steam Early Access in 2027.",
+    "genre": [
+      "Roguelike",
+      "Deckbuilding",
+      "Strategy",
+      "Indian Mythology"
+    ],
+    "platforms": [
+      "steam"
+    ],
+    "status": "Wishlist on Steam - Early Access 2027",
+    "features": [
+      "Dice x Deck x Slots",
+      "Vikram & Betaal",
+      "Original Soundtrack"
+    ],
+    "storeLinks": {
+      "steam": "https://store.steampowered.com/app/3759340/"
+    },
     "pullQuote": "Game development is rarely linear, but seeing the progress laid out makes the long nights feel worth it.",
     "playerQuote": "",
     "madeWith": "",
-    "cardImage": "/images/games/krodha-header.png",
-    "screenshots": ["/images/games/krodha-01.png", "/images/games/krodha-02.png", "/images/games/krodha-05.png", "/images/games/krodha-06.png"],
+    "cardImage": "/images/games/HeaderCapsule.png",
+    "screenshots": [
+      "/images/games/krodha-01.png",
+      "/images/games/krodha-02.png",
+      "/images/games/krodha-05.png",
+      "/images/games/krodha-06.png"
+    ],
     "logo": "/images/games/krodha-logo.png"
+  },
+  {
+    "title": "King's Bluff",
+    "slug": "kings-bluff",
+    "tagline": "Bluff your way out. Or fight your way through.",
+    "description": "One part poker, one part chess. Draw a hand, place your pieces face-down across the 5x5 Velvet Pit, and bluff your opponent through the reveals - then flip everything face-up for a fast chess showdown. Win by reading your opponent as sharply as the board: checkmate them, capture their king, or make them fold before a single piece moves.",
+    "genre": [
+      "Strategy",
+      "Bluffing",
+      "Chess"
+    ],
+    "platforms": [
+      "steam"
+    ],
+    "status": "In Development - Wishlist on Steam",
+    "features": [
+      "Chess x Poker",
+      "Hidden-Piece Tactics",
+      "1v1 Duels"
+    ],
+    "storeLinks": {
+      "steam": "https://store.steampowered.com/app/4750720/Kings_Bluff/"
+    },
+    "pullQuote": "You can't checkmate a player who folded.",
+    "playerQuote": "",
+    "madeWith": "",
+    "cardImage": "/images/games/kings-bluff-header.svg",
+    "screenshots": [
+      "/images/games/kings-bluff-01.svg",
+      "/images/games/kings-bluff-02.svg",
+      "/images/games/kings-bluff-03.svg",
+      "/images/games/kings-bluff-04.svg"
+    ],
+    "logo": "/images/games/kings-bluff-logo.svg",
+    "hidden": true,
+    "hiddenReason": "Work in progress: Steam page not public yet (checked 2026-11-03). Set hidden to false once store.steampowered.com/app/4750720 is live."
   }
 ]

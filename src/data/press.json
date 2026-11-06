@@ -1,0 +1,61 @@
+[
+  {
+    "slug": "dissonant",
+    "title": "Dissonant",
+    "tagline": "A patience test disguised as a game.",
+    "logo": "/images/press/dissonant/DissonantLogo_800x300.png",
+    "description": "A patience test disguised as a game. Control Vil through a mesmerizing realm governed by the all-seeing Observer. Simple mechanics, deliberate difficulty, no hand-holding.",
+    "factsheet": {
+      "Developer": "!How Game Studio",
+      "Based in": "Bangalore, India",
+      "Release": "Free demo available now on Steam",
+      "Platforms": "Windows — Steam, itch.io",
+      "Genres": "Difficult / Physics / Abstract / Psychedelic / Surreal"
+    },
+    "steamLink": "https://store.steampowered.com/app/3006030/Dissonant/",
+    "screenshots": [
+      { "src": "/images/press/dissonant/dissonant-01.png", "label": "Screenshot 01" },
+      { "src": "/images/press/dissonant/dissonant-02.png", "label": "Screenshot 02" },
+      { "src": "/images/press/dissonant/dissonant-03.png", "label": "Screenshot 03" },
+      { "src": "/images/press/dissonant/dissonant-04.png", "label": "Screenshot 04" },
+      { "src": "/images/press/dissonant/dissonant-05.png", "label": "Screenshot 05" },
+      { "src": "/images/press/dissonant/dissonant-06.png", "label": "Screenshot 06" }
+    ],
+    "characters": [],
+    "steamAssets": [
+      { "src": "/images/games/DissonantMainCapsule_1232x706.png", "label": "", "dim": "" },
+      { "src": "/images/games/DissonantVerticalCapsule_748x896.png", "label": "", "dim": "" },
+      { "src": "/images/games/LibraryHero_3840x1240.png", "label": "", "dim": "" },
+      { "src": "/images/games/dissonant-header.png", "label": "", "dim": "" }
+    ]
+  },
+  {
+    "slug": "krodha",
+    "title": "Krodha",
+    "tagline": "Anger forged into something worth fighting for.",
+    "logo": "/images/press/krodha/krodha-logo-800x300.png",
+    "description": "A dice, deck and slot-building roguelike rooted in the Indian legend of Vikram and Betaal. The number die picks the slot, the element die picks the element, and every matching card fires in a cascade at the end of the turn. Original soundtrack. Coming to Steam Early Access in 2027.",
+    "factsheet": {
+      "Developer": "!How Game Studio",
+      "Based in": "Bangalore, India",
+      "Release": "Steam Early Access — 2027",
+      "Platforms": "Windows — Steam",
+      "Genres": "Roguelike / Deckbuilding / Strategy / Indian Mythology"
+    },
+    "steamLink": "https://store.steampowered.com/app/3759340/",
+    "screenshots": [
+      { "src": "/images/press/krodha/krodha-01.png", "label": "Screenshot 01" },
+      { "src": "/images/press/krodha/krodha-02.png", "label": "Screenshot 02" },
+      { "src": "/images/press/krodha/krodha-05.png", "label": "Screenshot 03" },
+      { "src": "/images/press/krodha/krodha-06.png", "label": "Screenshot 04" }
+    ],
+    "characters": [],
+    "steamAssets": [
+      { "src": "/images/games/KrodhaIcon_withBG_1024x1024.png", "label": "", "dim": "" },
+      { "src": "/images/games/LibraryHero.png", "label": "", "dim": "" },
+      { "src": "/images/games/MainCapsule_1232x706.png", "label": "", "dim": "" },
+      { "src": "/images/games/VerticalCapsule_748x896.png", "label": "", "dim": "" },
+      { "src": "/images/games/HeaderCapsule.png", "label": "", "dim": "" }
+    ]
+  }
+]

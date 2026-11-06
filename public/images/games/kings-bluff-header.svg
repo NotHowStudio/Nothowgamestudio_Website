@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-label="King's Bluff placeholder — HEADER">
+  <rect width="1920" height="1080" fill="#1A1A1E"/>
+  <rect x="24" y="24" width="1872" height="1032" fill="none" stroke="#3A3A42" stroke-width="3"/>
+  <g transform="translate(760,290)" opacity="0.28">
+    <rect x="0" y="0" width="80" height="80" fill="#DE1D49"/>
+<rect x="80" y="0" width="80" height="80" fill="#222228"/>
+<rect x="160" y="0" width="80" height="80" fill="#DE1D49"/>
+<rect x="240" y="0" width="80" height="80" fill="#222228"/>
+<rect x="320" y="0" width="80" height="80" fill="#DE1D49"/>
+<rect x="0" y="80" width="80" height="80" fill="#222228"/>
+<rect x="80" y="80" width="80" height="80" fill="#DE1D49"/>
+<rect x="160" y="80" width="80" height="80" fill="#222228"/>
+<rect x="240" y="80" width="80" height="80" fill="#DE1D49"/>
+<rect x="320" y="80" width="80" height="80" fill="#222228"/>
+<rect x="0" y="160" width="80" height="80" fill="#DE1D49"/>
+<rect x="80" y="160" width="80" height="80" fill="#222228"/>
+<rect x="160" y="160" width="80" height="80" fill="#DE1D49"/>
+<rect x="240" y="160" width="80" height="80" fill="#222228"/>
+<rect x="320" y="160" width="80" height="80" fill="#DE1D49"/>
+<rect x="0" y="240" width="80" height="80" fill="#222228"/>
+<rect x="80" y="240" width="80" height="80" fill="#DE1D49"/>
+<rect x="160" y="240" width="80" height="80" fill="#222228"/>
+<rect x="240" y="240" width="80" height="80" fill="#DE1D49"/>
+<rect x="320" y="240" width="80" height="80" fill="#222228"/>
+<rect x="0" y="320" width="80" height="80" fill="#DE1D49"/>
+<rect x="80" y="320" width="80" height="80" fill="#222228"/>
+<rect x="160" y="320" width="80" height="80" fill="#DE1D49"/>
+<rect x="240" y="320" width="80" height="80" fill="#222228"/>
+<rect x="320" y="320" width="80" height="80" fill="#DE1D49"/>
+  </g>
+  <text x="960" y="620" text-anchor="middle" font-family="'Bebas Neue',Arial,sans-serif" font-size="150" letter-spacing="8" fill="#F5F5F7">KING'S BLUFF</text>
+  <text x="960" y="705" text-anchor="middle" font-family="'Space Grotesk',Arial,sans-serif" font-size="40" letter-spacing="6" fill="#9DD4B9">PLACEHOLDER &middot; HEADER</text>
+</svg>

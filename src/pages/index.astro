@@ -4,18 +4,25 @@ import GameCard from '../components/GameCard.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import games from '../data/games.json';
 
-const dissonant = games[0];
-const krodha = games[1];
+const visibleGames = games.filter(g => !g.hidden);
+const dissonant = games.find(g => g.slug === 'dissonant')!;
+const krodha = games.find(g => g.slug === 'krodha')!;
 
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "!How Game Studio",
+  "legalName": "NOTHOW Game Studio Private Limited",
   "url": "https://nothowgamestudio.com",
+  "email": "info@nothowgamestudio.com",
+  "foundingDate": "2024",
+  "numberOfEmployees": 3,
+  "address": { "@type": "PostalAddress", "addressLocality": "Bangalore", "addressCountry": "IN" },
   "logo": "https://nothowgamestudio.com/images/press/studio/logo-square-400x400.png",
-  "description": "Indian indie game studio crafting worlds that challenge and inspire.",
+  "description": "India-based indie game studio in Bangalore making off-beat premium Steam games, plus interactive design and game-like training.",
   "sameAs": [
     "https://store.steampowered.com/app/3006030/Dissonant/",
+    "https://store.steampowered.com/app/3759340/",
     "https://howstudio.itch.io",
     "https://www.youtube.com/channel/UCj3qQEY1lrFdWgDoQJeF7ow",
     "https://www.twitch.tv/nothowstudios",
@@ -37,8 +44,15 @@ const orgSchema = {
       <p class="split-text font-display text-white text-[48px] md:text-[64px] leading-none tracking-wider">GAME STUDIO</p>
       <p class="font-body text-snow text-lg md:text-xl mt-6 font-normal max-w-lg mx-auto opacity-0" id="hero-tagline">We don't make games the way you'd expect.</p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 opacity-0" id="hero-buttons">
-        <a href="/games" class="magnetic-btn bg-charcoal text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-night transition-colors">SEE OUR GAMES</a>
-        <a href="/about" class="magnetic-btn border border-white text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-white hover:text-crimson transition-colors">ABOUT THE STUDIO</a>
+        <a href={krodha.storeLinks.steam} target="_blank" rel="noopener noreferrer" class="magnetic-btn inline-flex items-center gap-2 bg-charcoal text-white font-body font-semibold text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-night transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 12.004-5.373 12.004-12S18.606 0 11.979 0z"/></svg>
+          WISHLIST KRODHA
+        </a>
+        <a href={dissonant.storeLinks.demo} target="_blank" rel="noopener noreferrer" class="magnetic-btn inline-flex items-center gap-2 bg-charcoal text-white font-body font-semibold text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-night transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 12.004-5.373 12.004-12S18.606 0 11.979 0z"/></svg>
+          PLAY DISSONANT DEMO
+        </a>
+        <a href="/games" class="magnetic-btn border border-white text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-white hover:text-crimson transition-colors">SEE OUR GAMES</a>
       </div>
     </div>
 
@@ -52,13 +66,17 @@ const orgSchema = {
     <div class="marquee-track">
       {[...Array(2)].map(() => (
         <div class="flex items-center gap-8 px-4">
-          <span class="font-display text-crimson text-lg whitespace-nowrap">DISSONANT</span>
-          <span class="text-fade">///</span>
-          <span class="font-body text-smoke text-sm whitespace-nowrap uppercase tracking-wider">COMING SOON ON STEAM</span>
-          <span class="text-fade">///</span>
           <span class="font-display text-mint text-lg whitespace-nowrap">KRODHA</span>
           <span class="text-fade">///</span>
-          <span class="font-body text-smoke text-sm whitespace-nowrap uppercase tracking-wider">EARLY ACCESS SOON</span>
+          <span class="font-body text-smoke text-sm whitespace-nowrap uppercase tracking-wider">WISHLIST ON STEAM</span>
+          <span class="text-fade">///</span>
+          <span class="font-display text-crimson text-lg whitespace-nowrap">DISSONANT</span>
+          <span class="text-fade">///</span>
+          <span class="font-body text-smoke text-sm whitespace-nowrap uppercase tracking-wider">FREE DEMO ON STEAM</span>
+          <span class="text-fade">///</span>
+          <span class="font-display text-mint text-lg whitespace-nowrap">FIRST SHIFT</span>
+          <span class="text-fade">///</span>
+          <span class="font-body text-smoke text-sm whitespace-nowrap uppercase tracking-wider">NEW TRAINING DEMO, PLAY IT IN YOUR BROWSER</span>
           <span class="text-fade">///</span>
           <span class="font-display text-crimson text-lg whitespace-nowrap">INDIE GAMES MADE DIFFERENT</span>
           <span class="text-fade">///</span>
@@ -102,21 +120,17 @@ const orgSchema = {
           )}
 
           <div class="flex flex-wrap items-center gap-4 fade-in">
-            <span class="flex items-center gap-2 text-smoke text-sm bg-surface px-3 py-1.5 rounded-full border border-fade/50">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-mint"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 12.004-5.373 12.004-12S18.606 0 11.979 0z"/></svg>
-              Early Access Coming Soon
-            </span>
+            <a href={krodha.storeLinks.steam} target="_blank" rel="noopener noreferrer" class="magnetic-btn inline-flex items-center gap-2 bg-crimson text-white font-body font-semibold text-sm uppercase tracking-[0.1em] rounded-lg px-6 py-3 hover:bg-crimson-dark transition-colors">
+              WISHLIST ON STEAM
+            </a>
+            <span class="text-smoke text-sm">Early Access 2027</span>
           </div>
         </div>
 
         <!-- Game art -->
         <div class="scale-in">
           <div class="rounded-xl border border-fade overflow-hidden relative group">
-            <img src="/images/games/krodha-01.png" alt="Krodha gameplay screenshot" width="1920" height="1080" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div class="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent pointer-events-none"></div>
-          </div>
-          <div class="mt-4">
-            <img src="/images/games/krodha-logo.png" alt="Krodha logo" width="800" height="300" class="h-10 opacity-70" />
+            <img src="/images/games/MainCapsule_1232x706.png" alt="Krodha — A Tale of Vikram & Betaal" width="1232" height="706" class="w-full object-cover group-hover:scale-105 transition-transform duration-700" />
           </div>
         </div>
       </div>
@@ -138,7 +152,7 @@ const orgSchema = {
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9DD4B9" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <h3 class="font-body font-semibold text-white text-xl mb-3 uppercase tracking-wider">Independent</h3>
-        <p class="font-body text-snow/80 text-base leading-relaxed">No publishers. No compromises. Every pixel is ours.</p>
+        <p class="font-body text-snow/80 text-base leading-relaxed">No compromises. Every pixel is ours.</p>
       </div>
       <div class="text-center group">
         <div class="w-16 h-16 rounded-full border-2 border-mint mx-auto mb-5 flex items-center justify-center group-hover:bg-mint/20 transition-colors duration-300 group-hover:scale-110 transform">
@@ -157,12 +171,33 @@ const orgSchema = {
     </div>
   </section>
 
+  <!-- NEW: TRAINING DEMO -->
+  <section class="bg-charcoal py-24 px-6 spotlight-section">
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-mint uppercase tracking-[0.2em] font-body font-medium text-[13px] mb-4 fade-in">NEW · TRAINING FOR MANUFACTURING</p>
+        <h2 class="split-text font-display text-snow text-[52px] md:text-[64px] leading-none mb-4">FIRST SHIFT</h2>
+        <p class="text-smoke text-lg mb-4 fade-in">Practise the job before you touch the line.</p>
+        <p class="text-smoke text-base leading-relaxed mb-8 fade-in">We turn a station's SOP into short, game-like levels a new operator plays on a tablet, in their language, with a training record for every attempt. The demo runs in your browser.</p>
+        <div class="flex flex-wrap gap-4 fade-in">
+          <a href="/training/sop-sample/" class="magnetic-btn bg-crimson text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-crimson-dark transition-colors">PLAY THE DEMO</a>
+          <a href="/training" class="magnetic-btn border border-mint text-mint font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-8 py-3 hover:bg-mint hover:text-charcoal transition-colors">HOW IT WORKS</a>
+        </div>
+      </div>
+      <a href="/training" class="scale-in block rounded-xl border border-fade overflow-hidden group">
+        <img src="/images/training/first-shift-poster.jpg" alt="First Shift training demo on a tablet" width="1280" height="720" class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+      </a>
+    </div>
+  </section>
+
+  <hr class="animated-hr" />
+
   <!-- ALL GAMES PREVIEW -->
   <section class="bg-charcoal py-24 px-6 spotlight-section">
     <div class="max-w-4xl mx-auto">
       <h2 class="split-text font-display text-snow text-[44px] md:text-[52px] text-center mb-16">OUR GAMES</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        {games.map(game => (
+        {visibleGames.map(game => (
           <div class="tilt-card fade-in">
             <GameCard
               title={game.title}
@@ -171,6 +206,8 @@ const orgSchema = {
               status={game.status}
               genre={game.genre}
               image={game.cardImage}
+              steam={game.storeLinks?.steam}
+              demo={game.storeLinks?.demo}
             />
           </div>
         ))}
