@@ -6,8 +6,6 @@ const studioAssets = [
   { src: '/images/press/studio/logo-wide-400x200.png', label: 'Logo Wide', dim: '400x200' },
   { src: '/images/press/studio/logo-square-400x400.png', label: 'Logo Square', dim: '400x400' },
   { src: '/images/press/studio/logo-symbol-400x400.png', label: 'Logo Symbol', dim: '400x400' },
-  { src: '/images/press/studio/youtube-banner-2048x1152.png', label: 'YouTube Banner', dim: '2048x1152' },
-  { src: '/images/press/studio/linkedin-banner-1128x191.png', label: 'LinkedIn Banner', dim: '1128x191' },
 ];
 
 const dissonantScreenshots = [
@@ -84,15 +82,11 @@ const krodhaSteam = [
             </div>
             <div class="flex gap-4">
               <dt class="text-mint font-body font-medium text-sm uppercase tracking-wider w-32 shrink-0">Based in</dt>
-              <dd class="text-snow font-body">India</dd>
+              <dd class="text-snow font-body">Bangalore, India</dd>
             </div>
             <div class="flex gap-4">
               <dt class="text-mint font-body font-medium text-sm uppercase tracking-wider w-32 shrink-0">Founded</dt>
               <dd class="text-snow font-body">Making games since 2018 · incorporated as NOTHOW Game Studio Private Limited in 2024</dd>
-            </div>
-            <div class="flex gap-4">
-              <dt class="text-mint font-body font-medium text-sm uppercase tracking-wider w-32 shrink-0">Team Size</dt>
-              <dd class="text-snow font-body">3 members</dd>
             </div>
             <div class="flex gap-4">
               <dt class="text-mint font-body font-medium text-sm uppercase tracking-wider w-32 shrink-0">Press Contact</dt>
@@ -125,12 +119,12 @@ const krodhaSteam = [
       <h2 class="font-display text-snow text-[32px] mb-6">ABOUT THE STUDIO</h2>
       <div class="bg-surface rounded-xl border border-fade p-8">
         <p class="text-smoke text-base leading-relaxed mb-4">
-          !How Game Studio is an independent game development studio based in India. We build games that don't play it safe. We believe in deliberate design, earned difficulty, and the kind of experiences that stay with you after you close the game.
+          !How Game Studio is an independent game development studio based in India. We believe in deliberate design, earned difficulty, and the kind of experiences that stay with you after you close the game.
         </p>
         <p class="text-smoke text-base leading-relaxed">
-          No publishers. No compromises. Every pixel is ours. The name says it all: we don't do things the expected way.
+          No compromises. Every pixel is ours. The name says it all: we don't do things the expected way.
         </p>
-        <p class="text-fade text-sm mt-6 italic">Feel free to use this description in articles and coverage.</p>
+        <p class="text-snow text-sm mt-6 italic">Feel free to use this description in articles and coverage.</p>
       </div>
     </div>
   </section>
@@ -140,7 +134,6 @@ const krodhaSteam = [
     <div class="max-w-5xl mx-auto">
       <div class="flex items-center justify-between mb-10">
         <h2 class="split-text font-display text-snow text-[36px]">STUDIO LOGOS & BRANDING</h2>
-        <p class="text-fade text-sm font-body hidden md:block">Right-click to save</p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
         {studioAssets.map(asset => (
@@ -152,7 +145,7 @@ const krodhaSteam = [
               <div class="p-4 flex items-center justify-between">
                 <div>
                   <p class="text-snow font-body text-sm font-medium">{asset.label}</p>
-                  <p class="text-fade text-xs font-body">{asset.dim}px · PNG</p>
+                  <p class="text-snow text-xs font-body">{asset.dim}px · PNG</p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-fade group-hover:text-mint transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </div>
@@ -208,7 +201,7 @@ const krodhaSteam = [
               <div class="p-3 flex items-center justify-between">
                 <div>
                   <p class="text-snow font-body text-sm font-medium">{asset.label}</p>
-                  <p class="text-fade text-xs font-body">{asset.dim}px</p>
+                  <p class="text-snow text-xs font-body">{asset.dim}px</p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-fade group-hover:text-mint transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </div>
@@ -251,7 +244,7 @@ const krodhaSteam = [
               <div class="p-3 flex items-center justify-between">
                 <div>
                   <p class="text-snow font-body text-sm font-medium">{asset.label}</p>
-                  <p class="text-fade text-xs font-body">{asset.dim}px</p>
+                  <p class="text-snow text-xs font-body">{asset.dim}px</p>
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-fade group-hover:text-mint transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </div>
@@ -274,21 +267,21 @@ const krodhaSteam = [
               <div class="w-10 h-10 rounded-lg bg-crimson border border-fade"></div>
               <div>
                 <p class="text-snow text-sm font-body font-medium">Crimson</p>
-                <p class="text-fade text-xs font-body">#DE1D49</p>
+                <p class="text-snow text-xs font-body">#DE1D49</p>
               </div>
             </div>
             <div class="flex items-center gap-4">
               <div class="w-10 h-10 rounded-lg bg-mint border border-fade"></div>
               <div>
                 <p class="text-snow text-sm font-body font-medium">Mint</p>
-                <p class="text-fade text-xs font-body">#9DD4B9</p>
+                <p class="text-snow text-xs font-body">#9DD4B9</p>
               </div>
             </div>
             <div class="flex items-center gap-4">
               <div class="w-10 h-10 rounded-lg bg-charcoal border border-fade"></div>
               <div>
                 <p class="text-snow text-sm font-body font-medium">Charcoal</p>
-                <p class="text-fade text-xs font-body">#1A1A1E</p>
+                <p class="text-snow text-xs font-body">#1A1A1E</p>
               </div>
             </div>
           </div>
