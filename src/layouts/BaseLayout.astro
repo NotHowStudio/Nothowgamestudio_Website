@@ -178,11 +178,12 @@ const faviconSvg = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
       if (!prefersReducedMotion) {
         document.querySelectorAll('.split-text').forEach(el => {
           const text = el.textContent || '';
-          el.innerHTML = text.split('').map((char, i) =>
-            char === ' '
-              ? ' '
-              : `<span class="char" style="transition-delay: ${i * 0.03}s">${char}</span>`
-          ).join('');
+          let charIndex = 0;
+          el.innerHTML = text.split(' ').map(word =>
+            `<span class="word">${word.split('').map(char =>
+              `<span class="char" style="transition-delay: ${(charIndex++) * 0.03}s">${char}</span>`
+            ).join('')}</span>`
+          ).join(' ');
         });
       }
 
