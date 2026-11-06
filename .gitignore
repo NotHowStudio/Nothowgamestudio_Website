@@ -22,3 +22,8 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local tooling (bun sandbox workaround + qmd search index)
+.bun-tmp/
+.bun-cache/
+.qmd/
