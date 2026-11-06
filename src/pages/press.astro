@@ -1,60 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
+import pressKits from '../data/press.json';
 
 const studioAssets = [
   { src: '/images/press/studio/logo-wide-400x200.png', label: 'Logo Wide', dim: '400x200' },
   { src: '/images/press/studio/logo-square-400x400.png', label: 'Logo Square', dim: '400x400' },
   { src: '/images/press/studio/logo-symbol-400x400.png', label: 'Logo Symbol', dim: '400x400' },
-];
-
-const dissonantScreenshots = [
-  { src: '/images/press/dissonant/dissonant-01.png', label: 'Screenshot 01' },
-  { src: '/images/press/dissonant/dissonant-02.png', label: 'Screenshot 02' },
-  { src: '/images/press/dissonant/dissonant-03.png', label: 'Screenshot 03' },
-  { src: '/images/press/dissonant/dissonant-04.png', label: 'Screenshot 04' },
-  { src: '/images/press/dissonant/dissonant-05.png', label: 'Screenshot 05' },
-  { src: '/images/press/dissonant/dissonant-06.png', label: 'Screenshot 06' },
-];
-
-const dissonantCharacters = [
-  { src: '/images/press/dissonant/vil-blue-mode.png', label: 'Vil - Blue Mode' },
-  { src: '/images/press/dissonant/vil-red-mode.png', label: 'Vil - Red Mode' },
-];
-
-const dissonantSteam = [
-  { src: '/images/press/dissonant/DissonantLogo_800x300.png', label: 'Game Logo', dim: '800x300' },
-  { src: '/images/press/dissonant/dissonant-icon.png', label: 'Icon', dim: 'Square' },
-  { src: '/images/press/dissonant/main-capsule-1232x706.png', label: 'Main Capsule', dim: '1232x706' },
-  { src: '/images/press/dissonant/header-capsule-920x430.png', label: 'Header Capsule', dim: '920x430' },
-  { src: '/images/press/dissonant/library-capsule-600x900.png', label: 'Library Capsule', dim: '600x900' },
-  { src: '/images/press/dissonant/library-header-920x430.png', label: 'Library Header', dim: '920x430' },
-  { src: '/images/press/dissonant/library-hero-3840x1240.png', label: 'Library Hero', dim: '3840x1240' },
-  { src: '/images/press/dissonant/library-logo.png', label: 'Library Logo', dim: 'Transparent' },
-  { src: '/images/press/dissonant/vertical-capsule-748x896.png', label: 'Vertical Capsule', dim: '748x896' },
-  { src: '/images/press/dissonant/small-capsule-462x174.png', label: 'Small Capsule', dim: '462x174' },
-  { src: '/images/press/dissonant/page-background-1438x810.png', label: 'Page Background', dim: '1438x810' },
-];
-
-const krodhaScreenshots = [
-  { src: '/images/press/krodha/krodha-01.png', label: 'Screenshot 01' },
-  { src: '/images/press/krodha/krodha-02.png', label: 'Screenshot 02' },
-  { src: '/images/press/krodha/krodha-05.png', label: 'Screenshot 03' },
-  { src: '/images/press/krodha/krodha-06.png', label: 'Screenshot 04' },
-];
-
-const krodhaSteam = [
-  { src: '/images/press/krodha/krodha-logo-800x300.png', label: 'Game Logo', dim: '800x300' },
-  { src: '/images/press/krodha/krodha-icon.png', label: 'Icon', dim: 'Square' },
-  { src: '/images/press/krodha/main-capsule-1232x706.png', label: 'Main Capsule', dim: '1232x706' },
-  { src: '/images/press/krodha/header-capsule-920x430.png', label: 'Header Capsule', dim: '920x430' },
-  { src: '/images/press/krodha/library-capsule-600x900.png', label: 'Library Capsule', dim: '600x900' },
-  { src: '/images/press/krodha/library-header-920x430.png', label: 'Library Header', dim: '920x430' },
-  { src: '/images/press/krodha/library-hero-3840x1240.png', label: 'Library Hero', dim: '3840x1240' },
-  { src: '/images/press/krodha/library-logo.png', label: 'Library Logo', dim: 'Transparent' },
-  { src: '/images/press/krodha/vertical-capsule-748x896.png', label: 'Vertical Capsule', dim: '748x896' },
-  { src: '/images/press/krodha/small-capsule-462x174.png', label: 'Small Capsule', dim: '462x174' },
-  { src: '/images/press/krodha/page-background-1438x810.png', label: 'Page Background', dim: '1438x810' },
 ];
 ---
 
@@ -67,66 +19,6 @@ const krodhaSteam = [
     </div>
     <h1 class="split-text font-display text-white text-[56px] md:text-[72px] leading-none relative z-10">PRESS KIT</h1>
     <p class="font-body text-snow/80 text-lg mt-4 relative z-10 fade-in">Everything you need to write about us.</p>
-  </section>
-
-  <!-- QUICK INFO -->
-  <section class="bg-charcoal py-16 px-6 border-b border-fade">
-    <div class="max-w-5xl mx-auto fade-in">
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <h2 class="font-display text-snow text-[32px] mb-6">STUDIO FACTS</h2>
-          <dl class="space-y-4">
-            <div class="flex gap-4">
-              <dt class="text-mint font-body font-medium text-sm uppercase tracking-wider w-32 shrink-0">Studio</dt>
-              <dd class="text-snow font-body">!How Game Studio</dd>
-            </div>
-            <div class="flex gap-4">
-              <dt class="text-mint font-body font-medium text-sm uppercase tracking-wider w-32 shrink-0">Based in</dt>
-              <dd class="text-snow font-body">Bangalore, India</dd>
-            </div>
-            <div class="flex gap-4">
-              <dt class="text-mint font-body font-medium text-sm uppercase tracking-wider w-32 shrink-0">Founded</dt>
-              <dd class="text-snow font-body">Making games since 2018 · incorporated as NOTHOW Game Studio Private Limited in 2024</dd>
-            </div>
-            <div class="flex gap-4">
-              <dt class="text-mint font-body font-medium text-sm uppercase tracking-wider w-32 shrink-0">Press Contact</dt>
-              <dd class="text-mint font-body">info@nothowgamestudio.com</dd>
-            </div>
-          </dl>
-        </div>
-        <div>
-          <h2 class="font-display text-snow text-[32px] mb-6">OUR GAMES</h2>
-          <div class="space-y-4">
-            <div class="bg-surface rounded-lg p-4 border border-fade">
-              <h3 class="font-display text-snow text-xl">DISSONANT</h3>
-              <p class="text-smoke text-sm mt-1">A patience test disguised as a game. Difficult / Physics / Surreal.</p>
-              <p class="text-mint text-xs mt-2 font-body font-medium uppercase tracking-wider">Free demo on Steam</p>
-            </div>
-            <div class="bg-surface rounded-lg p-4 border border-fade">
-              <h3 class="font-display text-snow text-xl">KRODHA</h3>
-              <p class="text-smoke text-sm mt-1">A dice, deck and slot-building roguelike rooted in the legend of Vikram and Betaal. Roguelike / Deckbuilding / Strategy.</p>
-              <p class="text-mint text-xs mt-2 font-body font-medium uppercase tracking-wider">Wishlist on Steam · Early Access 2027</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STUDIO DESCRIPTION -->
-  <section class="bg-charcoal py-16 px-6 border-b border-fade">
-    <div class="max-w-5xl mx-auto fade-in">
-      <h2 class="font-display text-snow text-[32px] mb-6">ABOUT THE STUDIO</h2>
-      <div class="bg-surface rounded-xl border border-fade p-8">
-        <p class="text-smoke text-base leading-relaxed mb-4">
-          !How Game Studio is an independent game development studio based in India. We believe in deliberate design, earned difficulty, and the kind of experiences that stay with you after you close the game.
-        </p>
-        <p class="text-smoke text-base leading-relaxed">
-          No compromises. Every pixel is ours. The name says it all: we don't do things the expected way.
-        </p>
-        <p class="text-snow text-sm mt-6 italic">Feel free to use this description in articles and coverage.</p>
-      </div>
-    </div>
   </section>
 
   <!-- STUDIO LOGOS & BRANDING -->
@@ -156,97 +48,17 @@ const krodhaSteam = [
     </div>
   </section>
 
-  <!-- DISSONANT -->
+  <!-- GAME PRESS KITS -->
   <section class="bg-charcoal py-20 px-6 border-b border-fade spotlight-section">
     <div class="max-w-5xl mx-auto">
-      <div class="flex items-center gap-6 mb-4 fade-in">
-        <img src="/images/press/dissonant/DissonantLogo_800x300.png" alt="Dissonant logo" class="h-12" />
-      </div>
-      <p class="text-smoke text-base mb-12 max-w-2xl fade-in">A patience test disguised as a game. Control Vil through a mesmerizing realm governed by the all-seeing Observer. Simple mechanics, deliberate difficulty, no hand-holding.</p>
-
-      <!-- Screenshots -->
-      <h3 class="font-display text-snow text-[28px] mb-6 fade-in">SCREENSHOTS</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 stagger-children">
-        {dissonantScreenshots.map(shot => (
-          <a href={shot.src} target="_blank" class="group">
-            <div class="rounded-xl border border-fade overflow-hidden hover:border-mint transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,212,185,0.15)]">
-              <img src={shot.src} alt={shot.label} class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <!-- Character Art -->
-      <h3 class="font-display text-snow text-[28px] mb-6 fade-in">CHARACTER ART</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 stagger-children">
-        {dissonantCharacters.map(char => (
-          <a href={char.src} target="_blank" class="group">
-            <div class="bg-surface rounded-xl border border-fade overflow-hidden hover:border-mint transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,212,185,0.15)] p-6 flex flex-col items-center">
-              <img src={char.src} alt={char.label} class="h-40 object-contain group-hover:scale-105 transition-transform duration-300" />
-              <p class="text-smoke text-xs mt-3 font-body">{char.label}</p>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <!-- Steam Assets -->
-      <h3 class="font-display text-snow text-[28px] mb-6 fade-in">STORE ASSETS & CAPSULES</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
-        {dissonantSteam.map(asset => (
-          <a href={asset.src} target="_blank" class="group">
-            <div class="bg-surface rounded-xl border border-fade overflow-hidden hover:border-mint transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,212,185,0.15)]">
-              <div class="aspect-video bg-night flex items-center justify-center p-3">
-                <img src={asset.src} alt={asset.label} class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
-              </div>
-              <div class="p-3 flex items-center justify-between">
-                <div>
-                  <p class="text-snow font-body text-sm font-medium">{asset.label}</p>
-                  <p class="text-snow text-xs font-body">{asset.dim}px</p>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-fade group-hover:text-mint transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- KRODHA -->
-  <section class="bg-charcoal py-20 px-6 border-b border-fade spotlight-section">
-    <div class="max-w-5xl mx-auto">
-      <div class="flex items-center gap-6 mb-4 fade-in">
-        <img src="/images/press/krodha/krodha-logo-800x300.png" alt="Krodha logo" class="h-12" />
-      </div>
-      <p class="text-smoke text-base mb-12 max-w-2xl fade-in">A dice, deck and slot-building roguelike rooted in the Indian legend of Vikram and Betaal. The number die picks the slot, the element die picks the element, and every matching card fires in a cascade at the end of the turn. Original soundtrack. Coming to Steam Early Access in 2027.</p>
-
-      <!-- Screenshots -->
-      <h3 class="font-display text-snow text-[28px] mb-6 fade-in">SCREENSHOTS</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 stagger-children">
-        {krodhaScreenshots.map(shot => (
-          <a href={shot.src} target="_blank" class="group">
-            <div class="rounded-xl border border-fade overflow-hidden hover:border-mint transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,212,185,0.15)]">
-              <img src={shot.src} alt={shot.label} class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" />
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <!-- Steam Assets -->
-      <h3 class="font-display text-snow text-[28px] mb-6 fade-in">STORE ASSETS & CAPSULES</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
-        {krodhaSteam.map(asset => (
-          <a href={asset.src} target="_blank" class="group">
-            <div class="bg-surface rounded-xl border border-fade overflow-hidden hover:border-mint transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,212,185,0.15)]">
-              <div class="aspect-video bg-night flex items-center justify-center p-3">
-                <img src={asset.src} alt={asset.label} class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" />
-              </div>
-              <div class="p-3 flex items-center justify-between">
-                <div>
-                  <p class="text-snow font-body text-sm font-medium">{asset.label}</p>
-                  <p class="text-snow text-xs font-body">{asset.dim}px</p>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-fade group-hover:text-mint transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      <h2 class="split-text font-display text-snow text-[36px] mb-3">GAME PRESS KITS</h2>
+      <p class="text-smoke font-body mb-10 fade-in">Pick a game for its factsheet, screenshots, logos, and store assets.</p>
+      <div class="grid md:grid-cols-2 gap-6 stagger-children">
+        {pressKits.map(game => (
+          <a href={`/press/${game.slug}`} class="group block" aria-label={`${game.title} press kit`}>
+            <div class="bg-surface rounded-xl border border-fade overflow-hidden hover:border-mint hover:-translate-y-1 transition-all duration-300 hover:shadow-[0_0_30px_rgba(157,212,185,0.15)]">
+              <div class="aspect-video bg-night flex items-center justify-center p-6">
+                <img src={`/images/games/${game.slug}-logo.png`} alt={`${game.title} logo`} class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
           </a>

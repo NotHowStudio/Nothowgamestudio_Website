@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import pressKits from '../../data/press.json';
+
+export function getStaticPaths() {
+  return pressKits.map((game) => ({
+    params: { game: game.slug },
+    props: { game },
+  }));
+}
+
+const { game } = Astro.props;
+
+const fmtDim = (dim: string) => (/^\d/.test(dim) ? `${dim}px` : dim);
+---
+
+<BaseLayout
+  title={`${game.title} Press Kit · !How Game Studio`}
+  description={`Press kit for ${game.title}: factsheet, screenshots, logos, and Steam store assets from !How Game Studio.`}
+>
+  <!-- HERO -->
+  <section class="bg-crimson pt-32 pb-20 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-16 right-20 w-48 h-48 border border-white/5 rounded-full"></div>
+      <div class="absolute bottom-8 left-16 w-32 h-32 border border-white/5 rotate-12"></div>
+    </div>
+    <div class="max-w-5xl mx-auto relative z-10">
+      <a href="/press" class="group inline-flex items-center gap-2 text-white/80 hover:text-white font-body text-sm uppercase tracking-[0.1em] mb-8 transition-colors">
+        <span class="inline-block group-hover:-translate-x-1 transition-transform">&larr;</span> Back to Press Kit
+      </a>
+      <h1 class="split-text font-display text-white text-[56px] md:text-[72px] leading-none mb-10">{game.title.toUpperCase()}</h1>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="font-display text-white text-[30px] mb-6">FACTSHEET</h2>
+          <dl class="space-y-4">
+            {Object.entries(game.factsheet).map(([key, value]) => (
+              <div class="flex gap-4">
+                <dt class="text-white/70 font-body font-medium text-sm uppercase tracking-wider w-28 shrink-0">{key}</dt>
+                <dd class="text-white font-body">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div>
+          <h2 class="font-display text-white text-[30px] mb-6">ABOUT THE GAME</h2>
+          <p class="text-white/85 text-base leading-relaxed">{game.description}</p>
+        </div>
+      </div>
+
+      <a href={game.steamLink} target="_blank" rel="noopener noreferrer" class="magnetic-btn inline-flex items-center gap-2 bg-charcoal text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-6 py-3 mt-10 hover:bg-night transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 12.004-5.373 12.004-12S18.606 0 11.979 0z"/></svg>
+        View on Steam
+      </a>
+    </div>
+  </section>
+
+  <!-- ASSETS -->
+  <section class="bg-charcoal py-20 px-6 spotlight-section">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="font-display text-snow text-[28px] mb-6 fade-in">SCREENSHOTS</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16 stagger-children">
+        {game.screenshots.map((shot) => (
+          <a href={shot.src} target="_blank" class="group">
+            <div class="rounded-xl border border-fade overflow-hidden hover:border-mint transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,212,185,0.15)]">
+              <img src={shot.src} alt={shot.label} class="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+          </a>
+        ))}
+      </div>
+
+      {game.characters.length > 0 && (
+        <>
+          <h3 class="font-display text-snow text-[28px] mb-6 fade-in">CHARACTER ART</h3>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 stagger-children">
+            {game.characters.map((char) => (
+              <a href={char.src} target="_blank" class="group">
+                <div class="bg-surface rounded-xl border border-fade overflow-hidden hover:border-mint transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,212,185,0.15)] p-6 flex flex-col items-center">
+                  <img src={char.src} alt={char.label} class="h-40 object-contain group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                  <p class="text-smoke text-xs mt-3 font-body">{char.label}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </>
+      )}
+
+      <h3 class="font-display text-snow text-[28px] mb-6 fade-in">STORE ASSETS &amp; CAPSULES</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
+        {game.steamAssets.map((asset) => (
+          <a href={asset.src} target="_blank" class="group">
+            <div class="bg-surface rounded-xl border border-fade overflow-hidden hover:border-mint transition-all duration-300 hover:shadow-[0_0_20px_rgba(157,212,185,0.15)]">
+              <div class="aspect-video bg-night flex items-center justify-center p-3">
+                <img src={asset.src} alt={asset.label} class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </div>
+              <div class="p-3 flex items-center justify-between">
+                <div>
+                  <p class="text-snow font-body text-sm font-medium">{asset.label}</p>
+                  <p class="text-snow text-xs font-body">{fmtDim(asset.dim)}</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-fade group-hover:text-mint transition-colors"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / NAV -->
+  <section class="bg-charcoal py-20 px-6 border-t border-fade">
+    <div class="max-w-5xl mx-auto text-center fade-in">
+      <h2 class="font-display text-snow text-[32px] mb-4">NEED SOMETHING ELSE?</h2>
+      <p class="text-smoke font-body mb-2">For interview requests, review keys, or additional assets:</p>
+      <p class="text-mint font-body text-lg font-medium mb-8">info@nothowgamestudio.com</p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="/press" class="magnetic-btn border border-mint text-mint font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-6 py-3 hover:bg-mint hover:text-charcoal transition-colors">All Press Kits</a>
+        <a href="/contact" class="magnetic-btn bg-crimson text-white font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-6 py-3 hover:bg-crimson-dark transition-colors">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

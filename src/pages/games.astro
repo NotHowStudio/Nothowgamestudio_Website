@@ -3,7 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import allGames from '../data/games.json';
 
-const games = allGames.filter(g => !g.hidden);
+const order = ['krodha', 'dissonant', 'kings-bluff'];
+const games = allGames
+  .filter(g => !g.hidden)
+  .sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
 
 const videoGameSchema = {
   "@context": "https://schema.org",
