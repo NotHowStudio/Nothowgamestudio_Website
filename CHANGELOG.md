@@ -4,6 +4,12 @@ Changes on `website-services-and-kings-bluff`. Nothing here is live until the br
 
 Local hosting steps and the page checklist are in the StudioPlans vault: `wiki/Website/Website Handoff.md`.
 
+## 2026-11-06: EV taster removed from the demo
+
+- Owner decision: the EV battery taster is not on the site. The demo build was re-exported from `TrainingFactory` without it, leaving six modules, and `/training/` now says "six" and no longer lists or mentions it.
+- The pharma and chilled-picking tasters stay, labelled as format samples.
+- Known gap: the reel's progress screen still shows the old totals (19 levels, 7 modules). It shows no EV footage. Fixing the totals needs a re-record.
+
 ## 2026-11-06: training page refresh
 
 - **Demo build:** re-exported `public/training/sop-sample/` from `TrainingFactory` branch `demo/first-shift`, commit `f7f5112`. It now has seven modules, adding the pharma, EV and chilled-picking tasters.
