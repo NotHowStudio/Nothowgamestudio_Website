@@ -13,7 +13,7 @@ const steps = [
     body: 'Get a step wrong and the module shows why it is wrong, then lets them try again. Tighten a flange in the wrong order and it leaks on the pressure test. Use the star pattern and it seals.',
   },
   {
-    title: 'Judge real defects',
+    title: 'Judge the defects',
     body: 'Inspection levels ask trainees to spot bad joints, missing parts and squeezed gaskets, and to make the call a supervisor would: accept, rework or escalate.',
   },
   {
@@ -34,6 +34,9 @@ const modules = [
   { name: 'Tighten a bolted flange (with a 3D level)', kind: 'Assembly · taster' },
   { name: '5S at your workstation', kind: 'Standard work · taster' },
   { name: 'Lock out a machine', kind: 'Safety · taster' },
+  { name: 'Clear the line before a new batch', kind: 'Pharma quality · taster' },
+  { name: 'Isolate an EV battery before service', kind: 'EV service safety · taster' },
+  { name: 'Pick a chilled order safely', kind: 'Dark-store standard work · taster' },
 ];
 
 const courseSchema = {
@@ -160,7 +163,7 @@ const courseSchema = {
   <section class="bg-charcoal py-24 px-6 spotlight-section">
     <div class="max-w-5xl mx-auto">
       <p class="text-mint uppercase tracking-[0.2em] font-body font-medium text-[13px] mb-3 fade-in">In the demo</p>
-      <h2 class="split-text font-display text-snow text-[34px] sm:text-[44px] md:text-[56px] leading-none mb-10">ONE ENGINE, FOUR PROCEDURES</h2>
+      <h2 class="split-text font-display text-snow text-[34px] sm:text-[44px] md:text-[56px] leading-none mb-10">ONE ENGINE, SEVEN PROCEDURES</h2>
       <ul class="grid sm:grid-cols-2 gap-4 stagger-children">
         {modules.map(m => (
           <li class="bg-surface rounded-xl px-6 py-5 border border-fade">
@@ -175,6 +178,9 @@ const courseSchema = {
       <div class="bg-night/60 rounded-lg border border-fade/60 p-5 mt-8 fade-in">
         <p class="text-smoke text-sm leading-relaxed">
           <span class="text-snow font-medium">About this sample.</span> The procedures in the demo are built from openly licensed public material. They are a sample, not training for any specific site. Translations in the demo are drafts; every language is reviewed by a native speaker before a module is delivered.
+        </p>
+        <p class="text-smoke text-sm leading-relaxed mt-3">
+          The pharma, EV and chilled-picking tasters show the format only. They haven't been reviewed by a subject expert, and the EV and chilled-picking ones draw on US rules, so please don't use any of them as guidance for real work.
         </p>
       </div>
     </div>
@@ -203,6 +209,7 @@ const courseSchema = {
           </div>
           <div class="flex flex-col gap-3">
             <a href={demoUrl} class="magnetic-btn inline-flex items-center justify-center gap-2 border border-mint text-mint font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-6 py-3 hover:bg-mint hover:text-charcoal transition-colors">Play the demo</a>
+            <a href="/training/first-shift-one-pager.pdf" class="inline-flex items-center justify-center border border-fade text-snow font-body font-medium text-sm uppercase tracking-[0.1em] rounded-lg px-6 py-3 hover:border-mint hover:text-mint transition-colors">Download the one-pager (PDF)</a>
             <p class="text-smoke text-sm font-body">Or email <span class="text-mint font-medium">info@nothowgamestudio.com</span></p>
           </div>
         </div>
