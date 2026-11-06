@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://nothowgamestudio.com',
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: (page) => !page.includes('/contact/thanks') })],
   vite: {
     plugins: [tailwindcss()],
   },

@@ -9,6 +9,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   jsonLd?: Record<string, unknown>;
+  noindex?: boolean;
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   description = 'Indian indie game studio crafting worlds that challenge and inspire. Makers of Dissonant and Krodha.',
   ogImage = '/images/press/studio/youtube-banner-2048x1152.png',
   jsonLd,
+  noindex = false,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, 'https://nothowgamestudio.com').href;
@@ -31,6 +33,7 @@ const faviconSvg = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' v
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex" />}
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
